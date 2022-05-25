@@ -1,0 +1,8 @@
+//
+// Created by arek on 25.05.22.
+//
+
+#ifndef BER_KALKULATOR_DATAFILES_H
+#define BER_KALKULATOR_DATAFILES_H
+
+#endif //BER_KALKULATOR_DATAFILES_H
