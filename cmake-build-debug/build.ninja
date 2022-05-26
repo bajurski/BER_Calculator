@@ -61,6 +61,12 @@ build CMakeFiles/BER_Kalkulator.dir/dataFiles.cpp.o: CXX_COMPILER__BER_Kalkulato
   OBJECT_DIR = CMakeFiles/BER_Kalkulator.dir
   OBJECT_FILE_DIR = CMakeFiles/BER_Kalkulator.dir
 
+build CMakeFiles/BER_Kalkulator.dir/calculateResullt.cpp.o: CXX_COMPILER__BER_Kalkulator_Debug /home/arek/OneDrive/AHE/Semestr_4/Systemy_Informatyczne_Zarządzania/Projekt/BER_Kalkulator/calculateResullt.cpp || cmake_object_order_depends_target_BER_Kalkulator
+  DEP_FILE = CMakeFiles/BER_Kalkulator.dir/calculateResullt.cpp.o.d
+  FLAGS = -g -std=gnu++17
+  OBJECT_DIR = CMakeFiles/BER_Kalkulator.dir
+  OBJECT_FILE_DIR = CMakeFiles/BER_Kalkulator.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target BER_Kalkulator
@@ -69,7 +75,7 @@ build CMakeFiles/BER_Kalkulator.dir/dataFiles.cpp.o: CXX_COMPILER__BER_Kalkulato
 #############################################
 # Link the executable BER_Kalkulator
 
-build BER_Kalkulator: CXX_EXECUTABLE_LINKER__BER_Kalkulator_Debug CMakeFiles/BER_Kalkulator.dir/main.cpp.o CMakeFiles/BER_Kalkulator.dir/dataFiles.cpp.o
+build BER_Kalkulator: CXX_EXECUTABLE_LINKER__BER_Kalkulator_Debug CMakeFiles/BER_Kalkulator.dir/main.cpp.o CMakeFiles/BER_Kalkulator.dir/dataFiles.cpp.o CMakeFiles/BER_Kalkulator.dir/calculateResullt.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/BER_Kalkulator.dir
   POST_BUILD = :
