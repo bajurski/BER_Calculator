@@ -4,7 +4,7 @@
 #include <iostream>
 #include "calculateResullt.h"
 #include <fstream>
-#include <iostream>
+#include "BER_computer.h"
 #include <string>
 
 using namespace std;
@@ -55,6 +55,7 @@ void test_1()
         cout << *i;
     cout << endl;
     cout  <<"========================================================================="<<endl;
+
 }
 void test_2()
 {
