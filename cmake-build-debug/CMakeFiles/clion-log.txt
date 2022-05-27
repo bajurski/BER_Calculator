@@ -1,4 +1,4 @@
-/home/arek/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/arek/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/ninja/linux/ninja -G Ninja -S /home/arek/OneDrive/AHE/Semestr_4/Systemy_Informatyczne_Zarządzania/Projekt/BER_Kalkulator -B /home/arek/OneDrive/AHE/Semestr_4/Systemy_Informatyczne_Zarządzania/Projekt/BER_Kalkulator/cmake-build-debug
+"/Users/arek/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /Users/arek/Programming/C++/BER_Kalkulator -B /Users/arek/Programming/C++/BER_Kalkulator/cmake-build-debug
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/arek/OneDrive/AHE/Semestr_4/Systemy_Informatyczne_Zarządzania/Projekt/BER_Kalkulator/cmake-build-debug
+-- Build files have been written to: /Users/arek/Programming/C++/BER_Kalkulator/cmake-build-debug
