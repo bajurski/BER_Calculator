@@ -5,7 +5,7 @@
 #ifndef BER_KALKULATOR_BER_COMPUTER_H
 #define BER_KALKULATOR_BER_COMPUTER_H
 
-void calcWrongBits();
+int calcWrongBits(char ch1, char ch2);
 
 
 

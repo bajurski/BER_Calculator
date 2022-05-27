@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void calcWrongBits(char A, char B)
+int calcWrongBits(char A, char B)
 {
 // compute number of different bits
     int count = 0;
@@ -20,10 +20,6 @@ void calcWrongBits(char A, char B)
             count++;
         }
     }
-    cout << "Number of different bits : " << count << endl;
-
-
-
-
-
+    return count;
+    //cout << "Number of different bits : " << count << endl;
 }
