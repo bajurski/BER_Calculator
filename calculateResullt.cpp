@@ -10,7 +10,7 @@
 using namespace std;
 
 testData loadDataFromFile(string  path1, string  path2) {
-    char num;
+    unsigned char num;
     string path{};
     bool switcher{true};
     int counter{0};
@@ -19,7 +19,7 @@ testData loadDataFromFile(string  path1, string  path2) {
     while (switcher) {
     if (counter==0) path = path1;
     if (counter==1) path = path2;
-    fstream file(path, ios::binary | ios::out);
+    ifstream file(path, ios::binary | ios::out);
     if (!file.is_open()) {
         cout << "Error in opening file." << endl;
     } else {
@@ -33,31 +33,58 @@ testData loadDataFromFile(string  path1, string  path2) {
 
            }
         }
-        // cout<<"Populating the file 1 for test 1 was successful ."<<endl;
         file.close();
     }
     counter++;
-    if(counter == 1) switcher = false;
+    if(counter == 2) switcher = false;
 }
         return testdat;
 }
 void test_1()
 {
     testData test_1_data;
-    string s1 = "test_1_1.dat";
-    string s2 = "test_1_2.dat";
+    const string s1 = "test_1_1.dat";
+    const string s2 = "test_1_2.dat";
     test_1_data = loadDataFromFile(s1,s2);
-    for (int i = 0; i < test_1_data.data1.size(); ++i) {
-        cout << (char*) &test_1_data.data1[i]<<endl;
-    }
+    for (auto i = test_1_data.data1.begin(); i != test_1_data.data1.end(); ++i)
+        cout << *i;
+    //-------------------------------------------------------------------------
+        cout << endl;
+    //-------------------------------------------------------------------------
+    for (auto i = test_1_data.data2.begin(); i != test_1_data.data2.end(); ++i)
+        cout << *i;
+    cout << endl;
+    cout  <<"========================================================================="<<endl;
 }
 void test_2()
 {
+    testData test_2_data;
     const string s3 = "test_2_1.dat";
     const string s4 = "test_2_2.dat";
+    test_2_data = loadDataFromFile(s3,s4);
+    for (auto i = test_2_data.data1.begin(); i != test_2_data.data1.end(); ++i)
+        cout << *i;
+    //-------------------------------------------------------------------------
+    cout << endl;
+    //-------------------------------------------------------------------------
+    for (auto i = test_2_data.data2.begin(); i != test_2_data.data2.end(); ++i)
+        cout << *i;
+    cout << endl;
+    cout << "========================================================================="<<endl;
 }
 void test_3()
 {
+    testData test_3_data;
     const string s5 = "test_3_1.dat";
     const string s6 = "test_3_2.dat";
+    test_3_data = loadDataFromFile(s5,s6);
+    for (auto i = test_3_data.data1.begin(); i != test_3_data.data1.end(); ++i)
+        cout << *i;
+    //-------------------------------------------------------------------------
+    cout << endl;
+    //-------------------------------------------------------------------------
+    for (auto i = test_3_data.data2.begin(); i != test_3_data.data2.end(); ++i)
+        cout << *i;
+    cout << endl;
+    cout << "========================================================================="<<endl;
 }
