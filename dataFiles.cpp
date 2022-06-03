@@ -75,7 +75,7 @@ void createFilesForTest_3()
     if(!file1.is_open()) {
         cout<<"Error in opening file 1 for test 3"<<endl;
     } else {
-        for (int i = 0; i < 400; ++i) {
+        for (int i = 0; i < 400000000; ++i) {
             file1.write(reinterpret_cast<const char *>(&num1), sizeof(num1));
         }
         cout<<"Populating the file 1 for test 3 was successful ."<<endl;
@@ -85,7 +85,7 @@ void createFilesForTest_3()
     if(!file2.is_open()) {
         cout<<"Error in opening file 2 for test 3"<<endl;
     } else {
-        for (int i = 0; i < 400; ++i) {
+        for (int i = 0; i < 400000000; ++i) {
             file2.write(reinterpret_cast<const char *>(&num2), sizeof(num2));
         }
         cout<<"Populating the file 2 for test 3 was successful."<<endl;
