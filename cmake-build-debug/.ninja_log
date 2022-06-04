@@ -1,0 +1,5 @@
+# ninja log v5
+342	413	1653600465042541513	BER_Kalkulator	a58161531706bf81
+1	342	1653600464970541987	CMakeFiles/BER_Kalkulator.dir/dataFiles.cpp.o	22d4222d91a7ac1a
+0	296	1653600464922542309	CMakeFiles/BER_Kalkulator.dir/main.cpp.o	40dbd022752b0d8a
+0	2	0	clean	fcd6376ad303f264
