@@ -5,3 +5,8 @@
 0	328	1654298725919544127	CMakeFiles/BER_Kalkulator.dir/main.cpp.o	40dbd022752b0d8a
 0	2	0	clean	fcd6376ad303f264
 1	470	1654302334200190323	CMakeFiles/BER_Kalkulator.dir/calculateResullt.cpp.o	fb964d1954682bb1
+0	348	1654305769026649847	CMakeFiles/BER_Kalkulator.dir/main.cpp.o	40dbd022752b0d8a
+0	354	1654305769034649942	CMakeFiles/BER_Kalkulator.dir/dataFiles.cpp.o	22d4222d91a7ac1a
+348	366	1654305769046650085	CMakeFiles/BER_Kalkulator.dir/BER_computer.cpp.o	53d832fb085c3992
+0	473	1654305769154651371	CMakeFiles/BER_Kalkulator.dir/calculateResullt.cpp.o	fb964d1954682bb1
+473	539	1654305769218652133	BER_Kalkulator	5a60b6c37e815888
