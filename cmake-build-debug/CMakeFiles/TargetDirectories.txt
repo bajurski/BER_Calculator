@@ -1,3 +1,0 @@
-/home/arek/OneDrive/AHE/Semestr_4/Systemy_Informatyczne_Zarządzania/Projekt/BER_Kalkulator/cmake-build-debug/CMakeFiles/BER_Kalkulator.dir
-/home/arek/OneDrive/AHE/Semestr_4/Systemy_Informatyczne_Zarządzania/Projekt/BER_Kalkulator/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/arek/OneDrive/AHE/Semestr_4/Systemy_Informatyczne_Zarządzania/Projekt/BER_Kalkulator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
