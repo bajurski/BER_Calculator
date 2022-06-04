@@ -19,7 +19,7 @@ std::string timeConverter(int sec) {
     return convertedTime;
 }
 
-testData loadDataFromFile(string  path1, string  path2, int volume) {
+testData loadDataFromFile(string  path1, string  path2) {
     unsigned char num;
     string path{};
     bool switcher{true};
@@ -33,16 +33,17 @@ testData loadDataFromFile(string  path1, string  path2, int volume) {
     if (!file.is_open()) {
         cout << "Error in opening file." << endl;
     } else {
-        for (int i = 0; i < volume; ++i) {
-           if (path == path1) {
-               file.read((char *) &num, sizeof(num));
-               testdat.data1.push_back(num);
-           } else if(path == path2) {
-               file.read((char *) &num, sizeof(num));
-               testdat.data2.push_back(num);
+        while (!file.eof()) {
+            if (path == path1 && !file.eof()) {
+                file.read((char *) &num, sizeof(num));
+                testdat.data1.push_back(num);
+            } else if (path == path2 && !file.eof()) {
+                file.read((char *) &num, sizeof(num));
+                testdat.data2.push_back(num);
 
-           }
+            }
         }
+
         file.close();
     }
     counter++;
@@ -59,15 +60,16 @@ void test_1()
     char val_2;
     int badBits{0};
     double BER_value;
-    test_1_data = loadDataFromFile(s1,s2, 100);
-
-    for (int i = 0; i < 100; ++i) {
-        val_1 = test_1_data.data1[i];
+    test_1_data = loadDataFromFile(s1,s2);
+    size_t totalNumOfBits = test_1_data.data1.size() * 2* 8;
+    for (int i = 0; i <  test_1_data.data1.size(); ++i) {
+        val_1 = test_1_data.data1.at(i);
         val_2 = test_1_data.data2[i];
         badBits+=calcWrongBits(reinterpret_cast<char>(val_1), reinterpret_cast<char>(val_2));
-        BER_value = badBits/1600.0;
+        BER_value = badBits/(double)totalNumOfBits;
 
     }
+    cout<<"Total number of bits : "<<totalNumOfBits<<'\n';
     cout <<'\n'<<"Number of bad bits in test 1 files : "<< badBits<<endl;
     cout <<"Bit Error Rate for files in Test 1 : "<< BER_value<<endl;
     cout  <<"========================================================================="<<endl;
@@ -83,14 +85,16 @@ void test_2()
     char val_2;
     int badBits{0};
     double BER_value;
-    test_2_data = loadDataFromFile(s3,s4, 100);
+    test_2_data = loadDataFromFile(s3,s4);
+    size_t totalNumOfBits = test_2_data.data1.size() * 2* 8;
 
     for (int i = 0; i < 100; ++i) {
         val_1 = test_2_data.data1[i];
         val_2 = test_2_data.data2[i];
         badBits+=calcWrongBits(reinterpret_cast<char>(val_1), reinterpret_cast<char>(val_2));
-        BER_value = badBits/1600.0;
+        BER_value = badBits/(double)totalNumOfBits;
     }
+    cout<<"Total number of bits : "<<totalNumOfBits<<'\n';
     cout <<"Number of bad bits in test 2 files : "<< badBits<<endl;
     cout <<"Bit Error Rate for files in Test 2 : "<< BER_value<<endl;
     cout << "========================================================================="<<endl;
@@ -106,16 +110,17 @@ void test_3()
     char val_2;
     int badBits{0};
     double BER_value;
-    test_3_data = loadDataFromFile(s5,s6, 400000000);
-
+    test_3_data = loadDataFromFile(s5,s6);
+    size_t totalNumOfBits = test_3_data.data2.size()*2*8;
     time = clock();
     int timeInSeconds = time/CLOCKS_PER_SEC;
     for (int i = 0; i < 400000000; ++i) {
         val_1 = test_3_data.data1[i];
         val_2 = test_3_data.data2[i];
         badBits+=calcWrongBits(reinterpret_cast<char>(val_1), reinterpret_cast<char>(val_2));
-        BER_value = badBits/6400000000.0;
+        BER_value = badBits/(double)totalNumOfBits;
     }
+    cout<<"Total number of bits : "<<totalNumOfBits<<'\n';
     time =(clock() - time);
     cout <<"Number of bad bits in test 3 files : "<< badBits<<endl;
     cout <<"Bit Error Rate for files in Test 3 : "<< BER_value<<endl;
