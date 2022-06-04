@@ -7,6 +7,8 @@
 
 #include <string>
 #include <vector>
+#include <time.h>
+
 
 struct testData
 {
@@ -14,6 +16,7 @@ struct testData
   std::vector<char> data2;
 };
 testData loadDataFromFile(std::string  path1, std::string  path2, int volume);
+std::string timeConverter(int seconds);
 void test_1();
 void test_2();
 void test_3();
