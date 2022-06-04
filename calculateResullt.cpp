@@ -5,10 +5,19 @@
 #include "calculateResullt.h"
 #include <fstream>
 #include "BER_computer.h"
-#include <string>
+
 
 
 using namespace std;
+
+std::string timeConverter(int sec) {
+    string convertedTime{};
+    int hours = sec/3600;
+    int minutes = (sec / 60) % 60;
+    int seconds = sec % 60;
+    convertedTime = to_string(hours)+"hrs " + to_string(minutes)+"min " + to_string(seconds) +"sec";
+    return convertedTime;
+}
 
 testData loadDataFromFile(string  path1, string  path2, int volume) {
     unsigned char num;
@@ -51,19 +60,12 @@ void test_1()
     int badBits{0};
     double BER_value;
     test_1_data = loadDataFromFile(s1,s2, 100);
-    /*for (auto i = test_1_data.data1.begin(); i != test_1_data.data1.end(); ++i)
-        cout << *i;
-    //-------------------------------------------------------------------------
-        cout << endl;
-    //-------------------------------------------------------------------------
-    for (auto i = test_1_data.data2.begin(); i != test_1_data.data2.end(); ++i)
-        cout << *i;
-    cout << endl;*/
+
     for (int i = 0; i < 100; ++i) {
         val_1 = test_1_data.data1[i];
         val_2 = test_1_data.data2[i];
         badBits+=calcWrongBits(reinterpret_cast<char>(val_1), reinterpret_cast<char>(val_2));
-        BER_value = badBits/100.0;
+        BER_value = badBits/1600.0;
 
     }
     cout <<'\n'<<"Number of bad bits in test 1 files : "<< badBits<<endl;
@@ -73,6 +75,7 @@ void test_1()
 }
 void test_2()
 {
+    clock_t time;
     testData test_2_data;
     const string s3 = "test_2_1.dat";
     const string s4 = "test_2_2.dat";
@@ -81,19 +84,12 @@ void test_2()
     int badBits{0};
     double BER_value;
     test_2_data = loadDataFromFile(s3,s4, 100);
-   /* for (auto i = test_2_data.data1.begin(); i != test_2_data.data1.end(); ++i)
-        cout << *i;
-    //-------------------------------------------------------------------------
-    cout << endl;
-    //-------------------------------------------------------------------------
-    for (auto i = test_2_data.data2.begin(); i != test_2_data.data2.end(); ++i)
-        cout << *i;
-    cout << endl;*/
+
     for (int i = 0; i < 100; ++i) {
         val_1 = test_2_data.data1[i];
         val_2 = test_2_data.data2[i];
         badBits+=calcWrongBits(reinterpret_cast<char>(val_1), reinterpret_cast<char>(val_2));
-        BER_value = badBits/100.0;
+        BER_value = badBits/1600.0;
     }
     cout <<"Number of bad bits in test 2 files : "<< badBits<<endl;
     cout <<"Bit Error Rate for files in Test 2 : "<< BER_value<<endl;
@@ -102,6 +98,7 @@ void test_2()
 }
 void test_3()
 {
+    clock_t time;
     testData test_3_data;
     const string s5 = "test_3_1.dat";
     const string s6 = "test_3_2.dat";
@@ -110,21 +107,20 @@ void test_3()
     int badBits{0};
     double BER_value;
     test_3_data = loadDataFromFile(s5,s6, 400000000);
-    /*for (auto i = test_3_data.data1.begin(); i != test_3_data.data1.end(); ++i)
-        cout << *i;
-    //-------------------------------------------------------------------------
-    cout << endl;*/
-    //-------------------------------------------------------------------------
-    /*for (auto i = test_3_data.data2.begin(); i != test_3_data.data2.end(); ++i)
-        cout << *i;
-    cout << endl;*/
-    for (int i = 0; i < 400; ++i) {
+
+    time = clock();
+    int timeInSeconds = time/CLOCKS_PER_SEC;
+    for (int i = 0; i < 400000000; ++i) {
         val_1 = test_3_data.data1[i];
         val_2 = test_3_data.data2[i];
         badBits+=calcWrongBits(reinterpret_cast<char>(val_1), reinterpret_cast<char>(val_2));
-        BER_value = badBits/400.0;
+        BER_value = badBits/6400000000.0;
     }
+    time =(clock() - time);
     cout <<"Number of bad bits in test 3 files : "<< badBits<<endl;
     cout <<"Bit Error Rate for files in Test 3 : "<< BER_value<<endl;
+    cout << "Calculation of BER took :" << timeConverter(timeInSeconds) << '\n';
     cout << "========================================================================="<<endl;
 }
+
+
