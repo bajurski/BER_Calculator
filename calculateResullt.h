@@ -14,8 +14,9 @@ struct testData
 {
   std::vector<char> data1;
   std::vector<char> data2;
+  size_t volume;
 };
-testData loadDataFromFile(std::string  path1, std::string  path2, int volume);
+testData loadDataFromFile(std::string  path1, std::string  path2);
 std::string timeConverter(int seconds);
 void test_1();
 void test_2();
