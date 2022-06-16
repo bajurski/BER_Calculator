@@ -86,6 +86,7 @@ void test_1()
     msg<<"Number of bad bits in test 1 files : "<< badBits<<endl;
     msg<<"Bit Error Rate for files in Test 1 : "<< BER_value<<endl;
     saveLog(msg.str());
+    closeLog();
 }
 void test_2()
 {
@@ -120,7 +121,7 @@ void test_2()
     msg<<"End of log for test 2"<<endl;
     msg<<"================================================"<<endl;
     saveLog(msg.str());
-   // closeLog();
+    closeLog();
 }
 void test_3()
 {
@@ -155,6 +156,6 @@ void test_3()
     msg<<"End of log for test 3"<<endl;
     msg<<"======================================================="<<endl;
     saveLog(msg.str());
-    //closeLog;
+    closeLog();
 }
 
