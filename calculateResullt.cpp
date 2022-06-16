@@ -85,6 +85,7 @@ void test_1()
     msg<<"Test 1 performed"<<endl;
     msg<<"Number of bad bits in test 1 files : "<< badBits<<endl;
     msg<<"Bit Error Rate for files in Test 1 : "<< BER_value<<endl;
+    msg<<"================================================"<<endl;
     saveLog(msg.str());
     closeLog();
 }
