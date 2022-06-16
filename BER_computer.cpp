@@ -4,6 +4,7 @@
 
 #include "BER_computer.h"
 
+
 using namespace std;
 
 int calcWrongBits(char A, char B)

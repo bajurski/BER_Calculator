@@ -5,12 +5,13 @@
 #include "calculateResullt.h"
 #include <fstream>
 #include "BER_computer.h"
-
+#include"logger.h"
 
 
 using namespace std;
 
 
+std::stringstream msg;
 
 testData loadDataFromFile(string  path1, string  path2) {
     unsigned char num;
@@ -44,6 +45,7 @@ testData loadDataFromFile(string  path1, string  path2) {
 }
 void test_1()
 {
+    openLog("tests.txt");
     testData test_1_data;
     const string s1 = "test_1_1.dat";
     const string s2 = "test_1_2.dat";
@@ -60,16 +62,18 @@ void test_1()
         BER_value = badBits/(double)totalNumOfBits;
 
     }
-
-    cout<<"Total number of bits : "<<totalNumOfBits<<'\n';
-    cout <<'\n'<<"Number of bad bits in test 1 files : "<< badBits<<endl;
-    cout <<"Bit Error Rate for files in Test 1 : "<< BER_value<<endl;
-    cout  <<"========================================================================="<<endl;
-
+    msg<<"Test 1 performed"<<endl;
+    msg<<"Total number of bits : "<<totalNumOfBits<<endl;
+    msg<<"Number of bad bits in test 1 files : "<<badBits<<endl;
+    msg<<"Bit Error Rate for files in Test 1 : "<< BER_value<<endl;
+    msg<<"End of log for test 1"<<endl;
+    msg<<"==================================="<<endl;
+    saveLog(msg.str());
+    closeLog;
 }
 void test_2()
 {
-
+    openLog("tests.txt");
     testData test_2_data;
     const string s3 = "test_2_1.dat";
     const string s4 = "test_2_2.dat";
@@ -85,14 +89,19 @@ void test_2()
         badBits+=calcWrongBits(reinterpret_cast<char>(val_1), reinterpret_cast<char>(val_2));
         BER_value = badBits/(double)totalNumOfBits;
     }
-    cout<<"Total number of bits : "<<totalNumOfBits<<'\n';
-    cout <<"Number of bad bits in test 2 files : "<< badBits<<endl;
-    cout <<"Bit Error Rate for files in Test 2 : "<< BER_value<<endl;
-    cout << "========================================================================="<<endl;
 
+    msg<<"Test 2 performed"<<endl;
+    msg<<"Total number of bits : "<<totalNumOfBits<<endl;
+    msg<<"Number of bad bits in test 2 files : "<<badBits<<endl;
+    msg<<"Bit Error Rate for files in Test 2 : "<< BER_value<<endl;
+    msg<<"End of log for test 2"<<endl;
+    msg<<"==================================="<<endl;
+    saveLog(msg.str());
+    closeLog;
 }
 void test_3()
 {
+    openLog("tests.txt");
     testData test_3_data;
     const string s5 = "test_3_1.dat";
     const string s6 = "test_3_2.dat";
@@ -109,10 +118,14 @@ void test_3()
         badBits+=calcWrongBits(reinterpret_cast<char>(val_1), reinterpret_cast<char>(val_2));
         BER_value = badBits/(double)totalNumOfBits;
     }
-    cout<<"Total number of bits : "<<totalNumOfBits<<'\n';
-    cout <<"Number of bad bits in test 3 files : "<< badBits<<endl;
-    cout <<"Bit Error Rate for files in Test 3 : "<< BER_value<<endl;
-    cout << "========================================================================="<<endl;
+    msg<<"Test 3 performed"<<endl;
+    msg<<"Total number of bits : "<<totalNumOfBits<<endl;
+    msg<<"Number of bad bits in test 3 files : "<<badBits<<endl;
+    msg<<"Bit Error Rate for files in Test 3 : "<< BER_value<<endl;
+    msg<<"End of log for test 3"<<endl;
+    msg<<"==================================="<<endl;
+    saveLog(msg.str());
+    closeLog;
 }
 
 
