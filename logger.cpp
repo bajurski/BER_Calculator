@@ -27,9 +27,9 @@ void saveLog(std::string msg)
     time_t currentTime = time(NULL);
     std::string txttime = (std::string)asctime(localtime(&currentTime));
     txttime = txttime.substr(0, txttime.length() - 1);
-    ss = (std::string)"T: " + txttime + " M: " + msg + "\n";
+    ss = (std::string)"T: " + txttime + " M: " + msg + '\n';
     logFile << ss.c_str();
     logFile.flush();
-    std::cout << ss.c_str();
+    std::cout << ss.c_str() << std::endl;
     std::cout.flush();
 }

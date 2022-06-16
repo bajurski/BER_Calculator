@@ -62,6 +62,7 @@ void test_1()
         BER_value = badBits/(double)totalNumOfBits;
 
     }
+    openLog("tests.txt");
     msg<<"Test 1 performed"<<endl;
     msg<<"Total number of bits : "<<totalNumOfBits<<endl;
     msg<<"Number of bad bits in test 1 files : "<<badBits<<endl;
@@ -73,7 +74,7 @@ void test_1()
 }
 void test_2()
 {
-    openLog("tests.txt");
+
     testData test_2_data;
     const string s3 = "test_2_1.dat";
     const string s4 = "test_2_2.dat";
@@ -89,7 +90,7 @@ void test_2()
         badBits+=calcWrongBits(reinterpret_cast<char>(val_1), reinterpret_cast<char>(val_2));
         BER_value = badBits/(double)totalNumOfBits;
     }
-
+    openLog("tests.txt");
     msg<<"Test 2 performed"<<endl;
     msg<<"Total number of bits : "<<totalNumOfBits<<endl;
     msg<<"Number of bad bits in test 2 files : "<<badBits<<endl;
@@ -101,7 +102,6 @@ void test_2()
 }
 void test_3()
 {
-    openLog("tests.txt");
     testData test_3_data;
     const string s5 = "test_3_1.dat";
     const string s6 = "test_3_2.dat";
@@ -118,6 +118,7 @@ void test_3()
         badBits+=calcWrongBits(reinterpret_cast<char>(val_1), reinterpret_cast<char>(val_2));
         BER_value = badBits/(double)totalNumOfBits;
     }
+    openLog("tests.txt");
     msg<<"Test 3 performed"<<endl;
     msg<<"Total number of bits : "<<totalNumOfBits<<endl;
     msg<<"Number of bad bits in test 3 files : "<<badBits<<endl;
