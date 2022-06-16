@@ -10,14 +10,7 @@
 
 using namespace std;
 
-std::string timeConverter(int sec) {
-    string convertedTime{};
-    int hours = sec/3600;
-    int minutes = (sec / 60) % 60;
-    int seconds = sec % 60;
-    convertedTime = to_string(hours)+"hrs " + to_string(minutes)+"min " + to_string(seconds) +"sec";
-    return convertedTime;
-}
+
 
 testData loadDataFromFile(string  path1, string  path2) {
     unsigned char num;
@@ -40,10 +33,8 @@ testData loadDataFromFile(string  path1, string  path2) {
             } else if (path == path2 && !file.eof()) {
                 file.read((char *) &num, sizeof(num));
                 testdat.data2.push_back(num);
-
             }
         }
-
         file.close();
     }
     counter++;
@@ -69,6 +60,7 @@ void test_1()
         BER_value = badBits/(double)totalNumOfBits;
 
     }
+
     cout<<"Total number of bits : "<<totalNumOfBits<<'\n';
     cout <<'\n'<<"Number of bad bits in test 1 files : "<< badBits<<endl;
     cout <<"Bit Error Rate for files in Test 1 : "<< BER_value<<endl;
@@ -77,7 +69,7 @@ void test_1()
 }
 void test_2()
 {
-    clock_t time;
+
     testData test_2_data;
     const string s3 = "test_2_1.dat";
     const string s4 = "test_2_2.dat";
@@ -87,7 +79,6 @@ void test_2()
     double BER_value;
     test_2_data = loadDataFromFile(s3,s4);
     size_t totalNumOfBits = test_2_data.data1.size() * 2* 8;
-
     for (int i = 0; i < 100; ++i) {
         val_1 = test_2_data.data1[i];
         val_2 = test_2_data.data2[i];
@@ -102,7 +93,6 @@ void test_2()
 }
 void test_3()
 {
-    clock_t time;
     testData test_3_data;
     const string s5 = "test_3_1.dat";
     const string s6 = "test_3_2.dat";
@@ -112,8 +102,7 @@ void test_3()
     double BER_value;
     test_3_data = loadDataFromFile(s5,s6);
     size_t totalNumOfBits = test_3_data.data2.size()*2*8;
-    time = clock();
-    int timeInSeconds = time/CLOCKS_PER_SEC;
+
     for (int i = 0; i < 400000000; ++i) {
         val_1 = test_3_data.data1[i];
         val_2 = test_3_data.data2[i];
@@ -121,10 +110,8 @@ void test_3()
         BER_value = badBits/(double)totalNumOfBits;
     }
     cout<<"Total number of bits : "<<totalNumOfBits<<'\n';
-    time =(clock() - time);
     cout <<"Number of bad bits in test 3 files : "<< badBits<<endl;
     cout <<"Bit Error Rate for files in Test 3 : "<< BER_value<<endl;
-    cout << "Calculation of BER took :" << timeConverter(timeInSeconds) << '\n';
     cout << "========================================================================="<<endl;
 }
 

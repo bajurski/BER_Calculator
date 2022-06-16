@@ -9,6 +9,5 @@ int main() {
     test_1();
     test_2();
     test_3();
-    std::cout<< "Time converted : "<<timeConverter(4037)<<'\n';
     return 0;
 }
