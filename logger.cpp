@@ -31,6 +31,6 @@ void saveLog(std::string msg)
     ss = (std::string)"T: " + txttime + " M: " + "\n" + msg + "\n";
     logFile << ss.c_str()<<std::endl;
     logFile.flush();
-    std::cout << ss.c_str() << std::endl;
-    std::cout.flush();
+    /*std::cout << ss.c_str() << std::endl;
+    std::cout.flush();*/
 }

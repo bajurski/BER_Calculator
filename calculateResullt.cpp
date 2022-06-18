@@ -72,16 +72,6 @@ void test_1()
         BER_value = badBits/(double)totalNumOfBits;
 
     }
-    /*time =(clock() - time);
-    int timeInSeconds = time/CLOCKS_PER_SEC;*/
-   /* cout<<"Total number of bits : "<<totalNumOfBits<<'\n';
-    cout <<'\n'<<"Number of bad bits in test 1 files : "<< badBits<<endl;
-    cout <<"Bit Error Rate for files in Test 1 : "<< BER_value<<endl;
-    cout << "Calculation of BER tmsg<<\"End of log for test 1\"<<endl;\n"
-            "    msg<<\"===================================\"<<endl;\n"
-            "    saveLog(msg.str());\n"
-            "    closeLog;ook :" << timeConverter(timeInSeconds) << '\n';
-    cout  <<"========================================================================="<<endl;*/
     msg<<"Test 1 performed"<<endl;
     msg<<"Number of bad bits in test 1 files : "<< badBits<<endl;
     msg<<"Bit Error Rate for files in Test 1 : "<< BER_value<<endl;
@@ -109,13 +99,6 @@ void test_2()
         badBits+=calcWrongBits(reinterpret_cast<char>(val_1), reinterpret_cast<char>(val_2));
         BER_value = badBits/(double)totalNumOfBits;
     }
-    /*time =(clock() - time);
-    int timeInSeconds = time/CLOCKS_PER_SEC;
-    cout<<"Total number of bits : "<<totalNumOfBits<<'\n';
-    cout <<"Number of bad bits in test 2 files : "<< badBits<<endl;
-    cout <<"Bit Error Rate for files in Test 2 : "<< BER_value<<endl;
-    cout << "Calculation of BER took :" << timeConverter(timeInSeconds) << '\n';
-    cout << "========================================================================="<<endl;*/
     msg<<"Test 2 performed"<<endl;
     msg<<"Number of bad bits in test 2 files : "<< badBits<<endl;
     msg<<"Bit Error Rate for files in Test 2 : "<< BER_value<<endl;
@@ -144,13 +127,6 @@ void test_3()
         badBits+=calcWrongBits(reinterpret_cast<char>(val_1), reinterpret_cast<char>(val_2));
         BER_value = badBits/(double)totalNumOfBits;
     }
-    /*time =(clock() - time);
-    int timeInSeconds = time/CLOCKS_PER_SEC;
-    cout<<"Total number of bits : "<<totalNumOfBits<<'\n';
-    cout <<"Number of bad bits in test 3 files : "<< badBits<<endl;
-    cout <<"Bit Error Rate for files in Test 3 : "<< BER_value<<endl;
-    cout << "Calculation of BER took :" << timeConverter(timeInSeconds) << '\n';
-    cout << "========================================================================="<<endl;*/
     msg<<"Test 3 performed"<<endl;
     msg<<"Number of bad bits in test 3 files : "<< badBits<<endl;
     msg<<"Bit Error Rate for files in Test 3 : "<< BER_value<<endl;
