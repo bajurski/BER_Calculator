@@ -78,7 +78,7 @@ void test_1()
     msg<<"Test 1 performed"<<endl;
     msg<<"Number of bad bits in test 1 files : "<< badBits<<endl;
     msg<<"Bit Error Rate for files in Test 1 : "<< BER_value<<endl;
-    msg<<"Time of the calculation was: " <<fixed<<setprecision(10)<< ((float)calcTime2 - calcTime1) / CLOCKS_PER_SEC << " sec " << std::endl;
+    msg<<"Time of the calculation was: " <<fixed<< ((float)calcTime2 - calcTime1) / CLOCKS_PER_SEC << " sec " << std::endl;
     msg<<"================================================"<<endl;
     saveLog(msg.str());
     closeLog();
@@ -108,7 +108,7 @@ void test_2()
     msg<<"Number of bad bits in test 2 files : "<< badBits<<endl;
     msg<<"Bit Error Rate for files in Test 2 : "<< BER_value<<endl;
     msg<<"End of log for test 2"<<endl;
-    msg<<"Time of the calculation was: " <<fixed<<setprecision(10)<< ((float)calcTime2 - calcTime1) / CLOCKS_PER_SEC << " sec " << std::endl;
+    msg<<"Time of the calculation was: " <<fixed<< ((float)calcTime2 - calcTime1) / CLOCKS_PER_SEC << " sec " << std::endl;
     msg<<"================================================"<<endl;
     saveLog(msg.str());
     closeLog();
@@ -138,7 +138,7 @@ void test_3()
     msg<<"Number of bad bits in test 3 files : "<< badBits<<endl;
     msg<<"Bit Error Rate for files in Test 3 : "<< BER_value<<endl;
     msg<<"End of log for test 3"<<endl;
-    msg<<"Time of the calculation was: " <<fixed<<setprecision(10)<< ((float)calcTime2 - calcTime1) / CLOCKS_PER_SEC << " sec " << std::endl;
+    msg<<"Time of the calculation was: " <<fixed<< ((float)calcTime2 - calcTime1) / CLOCKS_PER_SEC << " sec " << std::endl;
     msg<<"======================================================="<<endl;
     saveLog(msg.str());
     closeLog();
